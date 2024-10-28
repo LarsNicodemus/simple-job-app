@@ -4,7 +4,7 @@ import SwiftUI
 struct TraumJobsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

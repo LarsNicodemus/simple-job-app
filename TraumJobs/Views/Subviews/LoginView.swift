@@ -1,6 +1,13 @@
+//
+//  LoginView.swift
+//  TraumJobs
+//
+//  Created by Lars Nicodemus on 28.10.24.
+//
+
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
     @AppStorage("username")
     private var username: String = "Guest"
     var body: some View {
@@ -13,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    LoginView()
 }

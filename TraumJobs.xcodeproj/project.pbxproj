@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		CE75F23D2C8B14A4001AD0A3 /* TraumJobsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75F23C2C8B14A4001AD0A3 /* TraumJobsApp.swift */; };
-		CE75F23F2C8B14A4001AD0A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75F23E2C8B14A4001AD0A3 /* ContentView.swift */; };
 		CE75F2412C8B14A5001AD0A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE75F2402C8B14A5001AD0A3 /* Assets.xcassets */; };
 		CE75F2442C8B14A5001AD0A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE75F2432C8B14A5001AD0A3 /* Preview Assets.xcassets */; };
+		EE551E2F2CCFB33B002F4BBA /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E2E2CCFB337002F4BBA /* Enums.swift */; };
+		EE551E312CCFB342002F4BBA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E302CCFB33F002F4BBA /* Extensions.swift */; };
+		EE551E342CCFB35E002F4BBA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E332CCFB35E002F4BBA /* LoginView.swift */; };
+		EE551E362CCFB36F002F4BBA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E352CCFB36F002F4BBA /* HomeView.swift */; };
+		EE551E382CCFB438002F4BBA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E372CCFB438002F4BBA /* SettingsView.swift */; };
+		EE551E3A2CCFB92C002F4BBA /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E392CCFB92C002F4BBA /* NotificationSettingsView.swift */; };
+		EE551E3C2CCFBD0F002F4BBA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E3B2CCFBD07002F4BBA /* AppSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE75F2392C8B14A4001AD0A3 /* TraumJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraumJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE75F23C2C8B14A4001AD0A3 /* TraumJobsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraumJobsApp.swift; sourceTree = "<group>"; };
-		CE75F23E2C8B14A4001AD0A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE75F2402C8B14A5001AD0A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE75F2432C8B14A5001AD0A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE551E2E2CCFB337002F4BBA /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		EE551E302CCFB33F002F4BBA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EE551E332CCFB35E002F4BBA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EE551E352CCFB36F002F4BBA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EE551E372CCFB438002F4BBA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EE551E392CCFB92C002F4BBA /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		EE551E3B2CCFBD07002F4BBA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,10 @@
 		CE75F23B2C8B14A4001AD0A3 /* TraumJobs */ = {
 			isa = PBXGroup;
 			children = (
+				EE551E2D2CCFB31B002F4BBA /* Utils */,
+				EE551E2C2CCFB316002F4BBA /* Views */,
+				EE551E2B2CCFB311002F4BBA /* Models */,
 				CE75F23C2C8B14A4001AD0A3 /* TraumJobsApp.swift */,
-				CE75F23E2C8B14A4001AD0A3 /* ContentView.swift */,
 				CE75F2402C8B14A5001AD0A3 /* Assets.xcassets */,
 				CE75F2422C8B14A5001AD0A3 /* Preview Content */,
 			);
@@ -62,9 +76,53 @@
 		CE75F2422C8B14A5001AD0A3 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				EE551E292CCFB290002F4BBA /* Mockups */,
 				CE75F2432C8B14A5001AD0A3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE551E292CCFB290002F4BBA /* Mockups */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mockups;
+			sourceTree = "<group>";
+		};
+		EE551E2B2CCFB311002F4BBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE551E2C2CCFB316002F4BBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE551E322CCFB346002F4BBA /* Subviews */,
+				EE551E352CCFB36F002F4BBA /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EE551E2D2CCFB31B002F4BBA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EE551E3B2CCFBD07002F4BBA /* AppSettings.swift */,
+				EE551E302CCFB33F002F4BBA /* Extensions.swift */,
+				EE551E2E2CCFB337002F4BBA /* Enums.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EE551E322CCFB346002F4BBA /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				EE551E332CCFB35E002F4BBA /* LoginView.swift */,
+				EE551E372CCFB438002F4BBA /* SettingsView.swift */,
+				EE551E392CCFB92C002F4BBA /* NotificationSettingsView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE75F23F2C8B14A4001AD0A3 /* ContentView.swift in Sources */,
+				EE551E2F2CCFB33B002F4BBA /* Enums.swift in Sources */,
 				CE75F23D2C8B14A4001AD0A3 /* TraumJobsApp.swift in Sources */,
+				EE551E362CCFB36F002F4BBA /* HomeView.swift in Sources */,
+				EE551E382CCFB438002F4BBA /* SettingsView.swift in Sources */,
+				EE551E3A2CCFB92C002F4BBA /* NotificationSettingsView.swift in Sources */,
+				EE551E342CCFB35E002F4BBA /* LoginView.swift in Sources */,
+				EE551E3C2CCFBD0F002F4BBA /* AppSettings.swift in Sources */,
+				EE551E312CCFB342002F4BBA /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +343,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,6 +351,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.syntax-institut.TraumJobs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,6 +376,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +384,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.syntax-institut.TraumJobs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
