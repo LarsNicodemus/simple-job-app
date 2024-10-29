@@ -17,6 +17,12 @@
 		EE551E382CCFB438002F4BBA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E372CCFB438002F4BBA /* SettingsView.swift */; };
 		EE551E3A2CCFB92C002F4BBA /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E392CCFB92C002F4BBA /* NotificationSettingsView.swift */; };
 		EE551E3C2CCFBD0F002F4BBA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE551E3B2CCFBD07002F4BBA /* AppSettings.swift */; };
+		EE5521DF2CD0E679002F4BBA /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521DE2CD0E677002F4BBA /* Job.swift */; };
+		EE5521E12CD0E745002F4BBA /* JobAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E02CD0E745002F4BBA /* JobAddView.swift */; };
+		EE5521E32CD0F53C002F4BBA /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E22CD0F53C002F4BBA /* JobsView.swift */; };
+		EE5521E52CD10AF6002F4BBA /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E42CD10AF4002F4BBA /* Skill.swift */; };
+		EE5521E72CD10FC0002F4BBA /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E62CD10FBE002F4BBA /* Toast.swift */; };
+		EE5521E92CD11ED7002F4BBA /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E82CD11ED7002F4BBA /* JobDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		EE551E372CCFB438002F4BBA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EE551E392CCFB92C002F4BBA /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
 		EE551E3B2CCFBD07002F4BBA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		EE5521DE2CD0E677002F4BBA /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		EE5521E02CD0E745002F4BBA /* JobAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobAddView.swift; sourceTree = "<group>"; };
+		EE5521E22CD0F53C002F4BBA /* JobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsView.swift; sourceTree = "<group>"; };
+		EE5521E42CD10AF4002F4BBA /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		EE5521E62CD10FBE002F4BBA /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		EE5521E82CD11ED7002F4BBA /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,8 @@
 		EE551E2B2CCFB311002F4BBA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE5521E42CD10AF4002F4BBA /* Skill.swift */,
+				EE5521DE2CD0E677002F4BBA /* Job.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +122,7 @@
 		EE551E2D2CCFB31B002F4BBA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EE5521E62CD10FBE002F4BBA /* Toast.swift */,
 				EE551E3B2CCFBD07002F4BBA /* AppSettings.swift */,
 				EE551E302CCFB33F002F4BBA /* Extensions.swift */,
 				EE551E2E2CCFB337002F4BBA /* Enums.swift */,
@@ -121,6 +136,9 @@
 				EE551E332CCFB35E002F4BBA /* LoginView.swift */,
 				EE551E372CCFB438002F4BBA /* SettingsView.swift */,
 				EE551E392CCFB92C002F4BBA /* NotificationSettingsView.swift */,
+				EE5521E02CD0E745002F4BBA /* JobAddView.swift */,
+				EE5521E22CD0F53C002F4BBA /* JobsView.swift */,
+				EE5521E82CD11ED7002F4BBA /* JobDetailView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -195,12 +213,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5521E72CD10FC0002F4BBA /* Toast.swift in Sources */,
+				EE5521E92CD11ED7002F4BBA /* JobDetailView.swift in Sources */,
 				EE551E2F2CCFB33B002F4BBA /* Enums.swift in Sources */,
 				CE75F23D2C8B14A4001AD0A3 /* TraumJobsApp.swift in Sources */,
 				EE551E362CCFB36F002F4BBA /* HomeView.swift in Sources */,
 				EE551E382CCFB438002F4BBA /* SettingsView.swift in Sources */,
+				EE5521E12CD0E745002F4BBA /* JobAddView.swift in Sources */,
+				EE5521DF2CD0E679002F4BBA /* Job.swift in Sources */,
 				EE551E3A2CCFB92C002F4BBA /* NotificationSettingsView.swift in Sources */,
 				EE551E342CCFB35E002F4BBA /* LoginView.swift in Sources */,
+				EE5521E32CD0F53C002F4BBA /* JobsView.swift in Sources */,
+				EE5521E52CD10AF6002F4BBA /* Skill.swift in Sources */,
 				EE551E3C2CCFBD0F002F4BBA /* AppSettings.swift in Sources */,
 				EE551E312CCFB342002F4BBA /* Extensions.swift in Sources */,
 			);
