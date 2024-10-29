@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct JobDetailView: View {
-    @Binding var job: Job?
+    var job: Job
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack{
-                Text(job!.title)
+                Text(job.title)
                             .font(.largeTitle)
                             .bold()
                         Spacer()
@@ -22,11 +22,11 @@ struct JobDetailView: View {
                     
                     }
 
-            Text(job!.details)
+            Text(job.details)
                         .font(.body)
                         .padding(.vertical)
 
-            if job!.isFavorite {
+            if job.isFavorite {
                         Text("❤️ Favorit")
                             .font(.headline)
                             .foregroundColor(.red)
@@ -36,7 +36,7 @@ struct JobDetailView: View {
                         .font(.headline)
                         .padding(.top)
 
-            ForEach(job!.skills) { skill in
+            ForEach(job.skills) { skill in
                 Text("- \(skill.title)")
                             .font(.subheadline)
                     }
@@ -49,5 +49,5 @@ struct JobDetailView: View {
         }
 
         #Preview {
-            JobDetailView(job: .constant(Job(id: UUID(),title: "App Entwickler", details: "Entwicklung von iOS- und Android-Apps", salary: 50000, isFavorite: true, skills: [Skill(title: "SwiftUI"), Skill(title: "Kotlin")])))
+            JobDetailView(job: Job(id: UUID(),title: "App Entwickler", details: "Entwicklung von iOS- und Android-Apps", salary: 50000, isFavorite: true, skills: [Skill(title: "SwiftUI"), Skill(title: "Kotlin")]))
         }

@@ -36,51 +36,13 @@ struct JobsView: View {
         }
         .sheet(isPresented: $showJobDetailSheet) {
                     if let job = selectedJob {
-                        JobDetailViewOne(job: job)
+                        JobDetailView(job: job)
                     }
                 }
     }
 }
 
-struct JobDetailViewOne: View {
-    var job: Job
 
-    var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Text(job.title)
-                    .font(.largeTitle)
-                    .bold()
-                Spacer()
-                Image(systemName: "heart")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-            }
-
-            Text(job.details)
-                .font(.body)
-                .padding(.vertical)
-
-            if job.isFavorite {
-                Text("❤️ Favorit")
-                    .font(.headline)
-                    .foregroundColor(.red)
-            }
-
-            Text("Fähigkeiten:")
-                .font(.headline)
-                .padding(.top)
-
-            ForEach(job.skills) { skill in
-                Text("- \(skill.title)")
-                    .font(.subheadline)
-            }
-
-            Spacer()
-        }
-        .padding()
-    }
-}
 
 #Preview {
     let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
