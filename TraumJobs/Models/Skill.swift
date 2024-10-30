@@ -10,9 +10,11 @@ import Foundation
 
 @Model
 class Skill {
+    var id: UUID
     var title: String
     
-    init(title: String) {
+    init(id: UUID = UUID(), title: String) {
+        self.id = id
         self.title = title
     }
 }

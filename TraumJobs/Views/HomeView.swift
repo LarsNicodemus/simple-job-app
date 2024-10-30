@@ -18,12 +18,16 @@ struct HomeView: View {
             Tab("Add Job", systemImage: "plus.circle", value: 1){
                 JobAddView()
             }
-            Tab("Einstellungen", systemImage: "gearshape.fill", value: 2){
+            Tab("Favorite", systemImage: "heart.fill", value: 2){
+                JobsFavoriteView()
+            }
+            Tab("Einstellungen", systemImage: "gearshape.fill", value: 3){
                 SettingsView()
             }
         }
     }
 }
+
 
 
 #Preview {

@@ -1,16 +1,20 @@
 //
-//  JobsView.swift
+//  JobsFavoriteView.swift
 //  TraumJobs
 //
-//  Created by Lars Nicodemus on 29.10.24.
+//  Created by Lars Nicodemus on 30.10.24.
 //
 
 import SwiftUI
 import SwiftData
 
-struct JobsView: View {
+struct JobsFavoriteView: View {
     @Environment(\.modelContext) private var context
-    @Query(sort: \Job.title, order: .forward) var jobs: [Job]
+    
+    @Query(filter: #Predicate<Job> {job in
+        job.isFavorite == true
+    }, sort: \Job.title, order: .forward) var jobs: [Job]
+
     @Query var skills: [Skill]
     @State private var selectedJob: Job? = nil
  
@@ -71,11 +75,9 @@ struct JobsView: View {
 
 }
 
-
-
 #Preview {
     let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: Job.self, Skill.self, configurations: configuration)
-    return JobsView()
+    return JobsFavoriteView()
         .modelContainer(container)
 }

@@ -6,48 +6,78 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct JobDetailView: View {
-    var job: Job
+    @Environment(\.modelContext) private var context
+    @Query var jobs: [Job]
+    @Binding var job: Job?
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            HStack{
-                Text(job.title)
-                            .font(.largeTitle)
-                            .bold()
-                        Spacer()
-                        Image(systemName: "heart")
+            HStack {
+                Text(job?.title ?? "")
+                    .font(.largeTitle)
+                    .bold()
+                Spacer()
+                Image(systemName: (!(job?.isFavorite ?? false)) ? "heart" : "heart.fill")
                     .resizable()
+                    .foregroundColor(!(job?.isFavorite ?? false) ? .black: .purple)
                     .frame(width: 40, height: 40)
-                    
+                    .onTapGesture {
+                        job?.isFavorite.toggle()
                     }
-
-            Text(job.details)
-                        .font(.body)
-                        .padding(.vertical)
-
-            if job.isFavorite {
-                        Text("❤️ Favorit")
-                            .font(.headline)
-                            .foregroundColor(.red)
-                    }
-
-                    Text("Fähigkeiten:")
-                        .font(.headline)
-                        .padding(.top)
-
-            ForEach(job.skills) { skill in
-                Text("- \(skill.title)")
-                            .font(.subheadline)
-                    }
-
-                    Spacer()
-                }
-                .padding()
-                .navigationTitle("Job Details")
             }
-        }
+            .padding(.top, 16)
+            Text(job?.details ?? "")
+                .font(.body)
+                .padding(.vertical)
 
-        #Preview {
-            JobDetailView(job: Job(id: UUID(),title: "App Entwickler", details: "Entwicklung von iOS- und Android-Apps", salary: 50000, isFavorite: true, skills: [Skill(title: "SwiftUI"), Skill(title: "Kotlin")]))
+            VStack(alignment: .leading) {
+                Text("Gehalt:")
+                    .bold()
+                Text(job?.salary ?? 0.0, format: .currency(code: "EUR"))
+            }
+            
+
+            Text("Fähigkeiten:")
+                .font(.headline)
+                .padding(.top)
+            VStack(alignment: .leading) {
+                ForEach(job?.skills ?? []) { skill in
+
+                    Text("- \(skill.title)")
+                }
+            }
+            Spacer()
+            HStack{
+                Spacer()
+                Button {
+                    if let jobToDelete = job {
+                        context.delete(jobToDelete)
+                        job = nil
+                    }
+                } label: {
+                    HStack{
+                        Image(systemName: "trash")
+                        Text("Löschen")
+                    }
+                    .foregroundColor(.red)
+                }
+                Spacer()
+            }
+            .padding(.top, 16)
+            
         }
+        .padding()
+        .navigationTitle("Job Details")
+    }
+}
+
+#Preview {
+    JobDetailView(
+        job: .constant(Job(
+            id: UUID(), title: "App Entwickler",
+            details: "Entwicklung von iOS- und Android-Apps", salary: 50000,
+            isFavorite: true,
+            skills: [Skill(title: "SwiftUI"), Skill(title: "Kotlin")])))
+}

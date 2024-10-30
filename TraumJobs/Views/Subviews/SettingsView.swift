@@ -75,10 +75,24 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Button(action: resetSettings) {
-                        Text("Einstellungen zurücksetzen")
-                            .foregroundColor(.red)
+                    HStack {
+                        Spacer()
+                        Button {
+                            resetSettings()
+                        } label: {
+                            Text("Einstellungen zurücksetzen")
+                                .bold()
+                                .padding(.horizontal)
+                                .padding(.vertical, 8)
+                                .background(Color.gray.opacity(0.5))
+                                .cornerRadius(5)
+                                .foregroundColor(.red)
+                        }
+                        Spacer()
                     }
+                    }
+                .listRowBackground(Color.clear)
+                    
                 }
             }
             .font(.system(size: settings.fontSize))
@@ -87,9 +101,10 @@ struct SettingsView: View {
             .sheet(isPresented: $showNotificationSettings) {
                 NotificationSettingsView(
                     showNotificationSettings: $showNotificationSettings)
+                .presentationDetents([.medium, .large])
             }
         }
-    }
+    
     func resetSettings() {
         username = ""
         email = ""
