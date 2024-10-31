@@ -10,10 +10,10 @@ import SwiftData
 
 struct JobDetailView: View {
     @Environment(\.modelContext) private var context
-    @Query var jobs: [Job]
     @Binding var job: Job?
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            Spacer().frame(height: 16)
             HStack {
                 Text(job?.title ?? "")
                     .font(.largeTitle)
@@ -26,6 +26,7 @@ struct JobDetailView: View {
                     .onTapGesture {
                         job?.isFavorite.toggle()
                     }
+                    
             }
             .padding(.top, 16)
             Text(job?.details ?? "")

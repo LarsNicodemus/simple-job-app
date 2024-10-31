@@ -15,11 +15,12 @@ class Job {
     var details: String
     var salary: Double? = nil
     var isFavorite: Bool = false
-    @Relationship var skills: [Skill]
+    @Relationship(inverse: \Skill.jobs)
+    var skills: [Skill]
 
     init(
         id: UUID = UUID(), title: String, details: String, salary: Double?,
-        isFavorite: Bool = false, skills: [Skill]
+        isFavorite: Bool = false, skills: [Skill] = []
     ) {
         self.id = id
         self.title = title

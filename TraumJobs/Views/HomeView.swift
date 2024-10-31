@@ -16,7 +16,11 @@ struct HomeView: View {
                 JobsView()
             }
             Tab("Add Job", systemImage: "plus.circle", value: 1){
-                JobAddView()
+                TabView {
+                    JobAddView()
+                    SkillsView()
+                }
+                .tabViewStyle(.page)
             }
             Tab("Favorite", systemImage: "heart.fill", value: 2){
                 JobsFavoriteView()
@@ -32,7 +36,7 @@ struct HomeView: View {
 
 #Preview {
     let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try! ModelContainer(for: Job.self, Skill.self, configurations: configuration)
+    let container = try! ModelContainer(for: Job.self, configurations: configuration)
     return HomeView()
         .modelContainer(container)
 }

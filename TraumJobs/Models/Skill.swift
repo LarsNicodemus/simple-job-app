@@ -12,6 +12,7 @@ import Foundation
 class Skill {
     var id: UUID
     var title: String
+    var jobs: [Job] = []
     
     init(id: UUID = UUID(), title: String) {
         self.id = id

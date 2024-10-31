@@ -11,7 +11,6 @@ import SwiftData
 struct JobsView: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \Job.title, order: .forward) var jobs: [Job]
-    @Query var skills: [Skill]
     @State private var selectedJob: Job? = nil
  
     @State private var showJobDetailSheet = false
@@ -75,7 +74,7 @@ struct JobsView: View {
 
 #Preview {
     let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try! ModelContainer(for: Job.self, Skill.self, configurations: configuration)
+    let container = try! ModelContainer(for: Job.self, configurations: configuration)
     return JobsView()
         .modelContainer(container)
 }

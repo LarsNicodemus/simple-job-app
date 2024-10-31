@@ -23,6 +23,7 @@
 		EE5521E52CD10AF6002F4BBA /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E42CD10AF4002F4BBA /* Skill.swift */; };
 		EE5521E72CD10FC0002F4BBA /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E62CD10FBE002F4BBA /* Toast.swift */; };
 		EE5521E92CD11ED7002F4BBA /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E82CD11ED7002F4BBA /* JobDetailView.swift */; };
+		EE6024BE2CD39472009A65D5 /* SkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6024BD2CD39472009A65D5 /* SkillsView.swift */; };
 		EEFB79E82CD253B500B32829 /* JobsFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB79E72CD253B500B32829 /* JobsFavoriteView.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		EE5521E42CD10AF4002F4BBA /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		EE5521E62CD10FBE002F4BBA /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		EE5521E82CD11ED7002F4BBA /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
+		EE6024BD2CD39472009A65D5 /* SkillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsView.swift; sourceTree = "<group>"; };
 		EEFB79E72CD253B500B32829 /* JobsFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsFavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 				EE5521E22CD0F53C002F4BBA /* JobsView.swift */,
 				EE5521E82CD11ED7002F4BBA /* JobDetailView.swift */,
 				EEFB79E72CD253B500B32829 /* JobsFavoriteView.swift */,
+				EE6024BD2CD39472009A65D5 /* SkillsView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				EE551E382CCFB438002F4BBA /* SettingsView.swift in Sources */,
 				EE5521E12CD0E745002F4BBA /* JobAddView.swift in Sources */,
 				EE5521DF2CD0E679002F4BBA /* Job.swift in Sources */,
+				EE6024BE2CD39472009A65D5 /* SkillsView.swift in Sources */,
 				EE551E3A2CCFB92C002F4BBA /* NotificationSettingsView.swift in Sources */,
 				EEFB79E82CD253B500B32829 /* JobsFavoriteView.swift in Sources */,
 				EE551E342CCFB35E002F4BBA /* LoginView.swift in Sources */,

@@ -77,7 +77,7 @@ struct JobsFavoriteView: View {
 
 #Preview {
     let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try! ModelContainer(for: Job.self, Skill.self, configurations: configuration)
+    let container = try! ModelContainer(for: Job.self, configurations: configuration)
     return JobsFavoriteView()
         .modelContainer(container)
 }

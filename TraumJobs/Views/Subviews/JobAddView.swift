@@ -11,12 +11,20 @@ import SwiftUI
 struct JobAddView: View {
     @Environment(\.modelContext) private var context
     @Query var jobs: [Job]
-    @State private var skills: [Skill] = []
+    @Query var skills: [Skill]
+    @State private var skillsList: [Skill] = []
+    @State var selectedSkills: [Skill] = []
     @State var jobTitle: String = ""
     @State var jobDetails: String = ""
     @State var jobSalary: Double? = nil
     @State var skillTitle: String = ""
-
+    @State private var selectedTitle: String = ""
+    @State private var selectedSkill: Skill? = nil
+    @State var testSkills: [Skill] = [
+        Skill(title: "Test1"),
+        Skill(title: "Test2"),
+        Skill(title: "Test3"),
+    ]
     var body: some View {
         Form {
             VStack(alignment: .leading) {
@@ -62,25 +70,24 @@ struct JobAddView: View {
             }
             VStack(alignment: .leading) {
                 Text("Fähigkeiten")
-                ForEach(skills) { skill in
+                ForEach(selectedSkills){ skill in
                     Text("- \(skill.title)")
                 }
                 HStack {
-                    TextField("Gib hier die Fähigkeiten ein...", text: $skillTitle)
-                        .padding(.horizontal, 4)
-                        .padding(.vertical, 8)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.gray.opacity(0.5)))
+                    Picker("", selection: $selectedSkill) {
+                                Text("Wähle eine Fähigkeit").tag(nil as Skill?)
+                                ForEach(skills, id: \.self) { skill in
+                                    Text(skill.title).tag(skill as Skill?)
+                                }
+                            }
+                    .pickerStyle(.menu)
+                    .frame(width: 200, height: 30)
+                    Spacer()
                     Button {
-                        insertskill()
-                        skillTitle = ""
-                    }
-                    
-                    label: {
-                        Image(systemName: "plus")
-                    }
-                    .disabled(skillTitle.isEmpty)
+                                insertskill()
+                    } label: {
+                                Image(systemName: "plus.circle")
+                            }
                 }
             }
             Section {
@@ -92,7 +99,8 @@ struct JobAddView: View {
                         jobTitle = ""
                         jobDetails = ""
                         jobSalary = nil
-                        skills.removeAll()
+                        selectedSkills = []
+                        selectedSkill = nil
 
                     } label: {
                         Text("Speichern")
@@ -112,20 +120,27 @@ struct JobAddView: View {
         }
 
     }
+    
     func insertJob() {
         let job = Job(
             id: UUID(), title: jobTitle, details: jobDetails,
-            salary: jobSalary ?? 0.0, skills: skills)
+            salary: jobSalary ?? 0.0)
         context.insert(job)
-
+        job.skills = selectedSkills
+        
     }
     func insertskill() {
+        guard let skill = selectedSkill else { return }
         
-        if !skillTitle.isEmpty {
-            let skill = Skill(title: skillTitle)
-            skills.append(skill)
+        if let index = skills.firstIndex(where: {skill.id == $0.id}) {
+            if !selectedSkills.contains(where: { $0.id == skill.id }) {
+                selectedSkills.append(skills[index])
+            }
         }
-
+//        if !selectedSkills.contains(where: { $0.id == skill.id }) {
+//            selectedSkills.append(skill)
+//            selectedSkill = nil
+//        }
     }
 }
 

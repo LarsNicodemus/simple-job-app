@@ -6,7 +6,8 @@ struct TraumJobsApp: App {
         WindowGroup {
             HomeView()
                 .modelContainer(for: [
-                    Job.self
+                    Job.self,
+                    Skill.self
                                 ])
 
         }
