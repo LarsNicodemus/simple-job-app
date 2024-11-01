@@ -28,6 +28,7 @@ struct LoginView: View {
 
         if currentUser == nil {
             Text("Welcome, \(username1)!")
+                .padding(.vertical)
             VStack(alignment: .leading) {
                 TextField("Username eingeben..", text: $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -47,8 +48,18 @@ struct LoginView: View {
                         .onTapGesture {
                             isCreator.toggle()
                         }
+                        .padding(.vertical)
 
                 }
+                HStack{
+                    Spacer()
+                    Button("Login"){
+                        setUser()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    Spacer()
+                }
+                .padding(.vertical)
             }
 
         }
@@ -58,7 +69,15 @@ struct LoginView: View {
         //        }
         //        .padding()
     }
-
+    func setUser() {
+        
+        if let index = users.firstIndex(where: {username == $0.userName || usermail == $0.email}) {
+            currentUser = users[index]
+        } else {
+            let user = AppUser(userName: username, email: usermail, password: userpassword, isCreator: isCreator)
+            currentUser = user
+        }
+    }
     func syncUser() {
         username1 = username
     }

@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
+    @Environment(\.modelContext) private var context
+    @Query var users: [AppUser]
+    @State private var currentUser: AppUser?
     @StateObject private var settings = AppSettings()
     @AppStorage("username") private var username = ""
     @AppStorage("email") private var email = ""
@@ -17,7 +21,7 @@ struct SettingsView: View {
     @AppStorage("language") private var language = "Deutsch"
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("fontSize") private var fontSize = 14.0
-
+    @State var isCreator: Bool = false
     @State private var showNotificationSettings = false
 
     let languages = ["Deutsch", "English", "Français", "Español"]
@@ -33,6 +37,14 @@ struct SettingsView: View {
                         "Geburtsdatum", selection: $birthDate,
                         displayedComponents: .date)
                     TextField("Stadt", text: $location)
+                    Label {
+                        Text("Wollen sie Stellen inserieren?")
+                    } icon: {
+                        Image(systemName: (currentUser?.isCreator ?? false) ? "checkmark.square" : "square")
+                            .onTapGesture {
+                                currentUser?.isCreator.toggle()
+                            }
+                    }
                 }
                 Section(header: Text("Benachrichtigungen")) {
                     Toggle(

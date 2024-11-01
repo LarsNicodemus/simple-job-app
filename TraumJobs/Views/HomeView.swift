@@ -17,22 +17,23 @@ struct HomeView: View {
 
     var body: some View {
         
-        if currentUser == nil {
-            LoginView()
-        }
-        else {
+//        if currentUser == nil {
+//            LoginView()
+//                .padding()
+//        }
+//        else {
             TabView(selection: $selection){
                 Tab("Start", systemImage: "house.fill", value: 0) {
                     JobsView()
                 }
-                if currentUser?.isCreator == true {
+//                if currentUser?.isCreator == true {
                     Tab("Add Job", systemImage: "plus.circle", value: 1){
                         TabView {
                             JobAddView()
                             SkillsView()
                         }
                         .tabViewStyle(.page)
-                    }
+//                    }
                 }
                 Tab("Favorite", systemImage: "heart.fill", value: 2){
                     JobsFavoriteView()
@@ -42,7 +43,7 @@ struct HomeView: View {
                 }
             }
             .font(.system(size: settings.fontSize))
-        }
+//        }
     }
     
 }
