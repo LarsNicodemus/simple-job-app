@@ -82,12 +82,13 @@ struct SettingsView: View {
                         } label: {
                             Text("Einstellungen zurücksetzen")
                                 .bold()
-                                .padding(.horizontal)
-                                .padding(.vertical, 8)
-                                .background(Color.gray.opacity(0.5))
-                                .cornerRadius(5)
-                                .foregroundColor(.red)
+                                .padding(8)
+                                .foregroundColor(.white)
+                                
                         }
+                        
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
                         Spacer()
                     }
                     }

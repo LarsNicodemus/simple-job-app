@@ -24,6 +24,8 @@
 		EE5521E72CD10FC0002F4BBA /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E62CD10FBE002F4BBA /* Toast.swift */; };
 		EE5521E92CD11ED7002F4BBA /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5521E82CD11ED7002F4BBA /* JobDetailView.swift */; };
 		EE6024BE2CD39472009A65D5 /* SkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6024BD2CD39472009A65D5 /* SkillsView.swift */; };
+		EE60281D2CD4FD74009A65D5 /* MOCK_JOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60281C2CD4FD6D009A65D5 /* MOCK_JOB.swift */; };
+		EE60281F2CD51A9D009A65D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60281E2CD51A9A009A65D5 /* User.swift */; };
 		EEFB79E82CD253B500B32829 /* JobsFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFB79E72CD253B500B32829 /* JobsFavoriteView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		EE5521E62CD10FBE002F4BBA /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		EE5521E82CD11ED7002F4BBA /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		EE6024BD2CD39472009A65D5 /* SkillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsView.swift; sourceTree = "<group>"; };
+		EE60281C2CD4FD6D009A65D5 /* MOCK_JOB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCK_JOB.swift; sourceTree = "<group>"; };
+		EE60281E2CD51A9A009A65D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EEFB79E72CD253B500B32829 /* JobsFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsFavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,7 @@
 		EE551E292CCFB290002F4BBA /* Mockups */ = {
 			isa = PBXGroup;
 			children = (
+				EE60281C2CD4FD6D009A65D5 /* MOCK_JOB.swift */,
 			);
 			path = Mockups;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 		EE551E2B2CCFB311002F4BBA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE60281E2CD51A9A009A65D5 /* User.swift */,
 				EE5521E42CD10AF4002F4BBA /* Skill.swift */,
 				EE5521DE2CD0E677002F4BBA /* Job.swift */,
 			);
@@ -221,6 +227,7 @@
 			files = (
 				EE5521E72CD10FC0002F4BBA /* Toast.swift in Sources */,
 				EE5521E92CD11ED7002F4BBA /* JobDetailView.swift in Sources */,
+				EE60281D2CD4FD74009A65D5 /* MOCK_JOB.swift in Sources */,
 				EE551E2F2CCFB33B002F4BBA /* Enums.swift in Sources */,
 				CE75F23D2C8B14A4001AD0A3 /* TraumJobsApp.swift in Sources */,
 				EE551E362CCFB36F002F4BBA /* HomeView.swift in Sources */,
@@ -232,6 +239,7 @@
 				EEFB79E82CD253B500B32829 /* JobsFavoriteView.swift in Sources */,
 				EE551E342CCFB35E002F4BBA /* LoginView.swift in Sources */,
 				EE5521E32CD0F53C002F4BBA /* JobsView.swift in Sources */,
+				EE60281F2CD51A9D009A65D5 /* User.swift in Sources */,
 				EE5521E52CD10AF6002F4BBA /* Skill.swift in Sources */,
 				EE551E3C2CCFBD0F002F4BBA /* AppSettings.swift in Sources */,
 				EE551E312CCFB342002F4BBA /* Extensions.swift in Sources */,

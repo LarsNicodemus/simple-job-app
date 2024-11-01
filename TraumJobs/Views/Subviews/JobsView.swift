@@ -12,7 +12,7 @@ struct JobsView: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \Job.title, order: .forward) var jobs: [Job]
     @State private var selectedJob: Job? = nil
- 
+    @StateObject private var settings = AppSettings()
     @State private var showJobDetailSheet = false
     var body: some View {
         List{
@@ -56,6 +56,7 @@ struct JobsView: View {
                 }
             }
         }
+        .font(.system(size: settings.fontSize))
         .sheet(isPresented: $showJobDetailSheet) {
             JobDetailView(job: $selectedJob)
                 .presentationDetents([.medium, .large])
